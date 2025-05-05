@@ -82,7 +82,7 @@ services:
 
 networks:
   currency-network
-
+```
 # 🚀 Spring Boot Microservices with Docker & Docker Compose
 
 This project demonstrates a microservices architecture using **Spring Boot**, **Docker**, and **Docker Compose**. It features service discovery with **Eureka**, API routing with **Spring Cloud Gateway**, inter-service communication using **Feign**, and **Zipkin** for distributed tracing.
