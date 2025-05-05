@@ -81,4 +81,63 @@ services:
       - currency-network
 
 networks:
-  currency-network:
+  currency-network
+
+
+🔗 Application URLs
+🏦 Currency Exchange Service
+http://localhost:8000/currency-exchange/from/USD/to/INR
+
+💱 Currency Conversion Service
+http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
+
+http://localhost:8100/currency-conversion-feign/from/USD/to/INR/quantity/10
+
+📘 Eureka Naming Server
+http://localhost:8761/
+
+🚪 API Gateway
+http://localhost:8765/currency-exchange/from/USD/to/INR
+
+http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10
+
+http://localhost:8765/currency-conversion-feign/from/USD/to/INR/quantity/10
+
+http://localhost:8765/currency-conversion-new/from/USD/to/INR/quantity/10
+
+📈 Zipkin Tracing
+http://localhost:9411/
+
+🚀 Docker Commands
+bash
+Copy
+Edit
+# Run Zipkin separately (if not using docker-compose)
+docker run -p 9411:9411 openzipkin/zipkin:2.23
+
+# Push images to Docker Hub
+docker push singhalok2024/mmv3-currency-exchange-service:0.0.1-SNAPSHOT
+docker push singhalok2024/mmv3-currency-conversion-service:0.0.1-SNAPSHOT
+docker push singhalok2024/mmv3-naming-server:0.0.1-SNAPSHOT
+docker push singhalok2024/mmv3-api-gateway:0.0.1-SNAPSHOT
+
+# Check Docker Compose version
+docker-compose --version
+
+# Start all services
+docker-compose up
+
+# Monitor service output
+watch -n 0.1 curl http://localhost:8000/sample-api
+🧠 Concepts Covered
+Spring Boot Microservices
+
+Eureka Discovery Service
+
+Spring Cloud Gateway
+
+Feign REST Clients
+
+Centralized Logging & Distributed Tracing with Zipkin
+
+Docker & Docker Compose
